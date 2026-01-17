@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="city_road_world">
+    
+    <!-- Soleil -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Sol (asphalte gris) -->
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ROUTE PRINCIPALE (ligne blanche centrale) -->
+    <model name="road_center_line">
+      <static>true</static>
+      <pose>0 0 0.001 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>30 0.15 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Lignes pointillées (style route réelle) -->
+    <model name="dash_1">
+      <static>true</static>
+      <pose>-10 0 0.001 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2 0.1 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 0 1</ambient>
+            <diffuse>1 1 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="dash_2">
+      <static>true</static>
+      <pose>-6 0 0.001 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2 0.1 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 0 1</ambient>
+            <diffuse>1 1 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ARBRES (modèles Gazebo intégrés) -->
+    <include>
+      <uri>model://oak_tree</uri>
+      <pose>5 3 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://oak_tree</uri>
+      <pose>5 -3 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://oak_tree</uri>
+      <pose>-8 4 0 0 0 0</pose>
+    </include>
+
+    <!-- BÂTIMENTS -->
+    <include>
+      <uri>model://cafe</uri>
+      <pose>10 8 0 0 0 1.57</pose>
+    </include>
+
+    <include>
+      <uri>model://gas_station</uri>
+      <pose>-12 -8 0 0 0 0</pose>
+    </include>
+
+    <!-- VOITURES GARÉES -->
+    <include>
+      <uri>model://hatchback_red</uri>
+      <pose>-5 -5 0 0 0 0.5</pose>
+    </include>
+
+    <include>
+      <uri>model://ambulance</uri>
+      <pose>8 -6 0 0 0 -0.5</pose>
+    </include>
+
+    <!-- PANNEAUX DE SIGNALISATION -->
+    <include>
+      <uri>model://stop_sign</uri>
+      <pose>2 2 0 0 0 0</pose>
+    </include>
+
+  </world>
+</sdf>
