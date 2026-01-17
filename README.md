@@ -1,6 +1,6 @@
 # Line Following Robot Using ROS 2 and Gazebo
 
-**Student:** Chaima Saoudi and Amani Salah 
+**Student:** Chaima Saoudi and Amani Salah  
 **Year:** 2024-2025  
 **Technologies:** ROS 2 Humble, Gazebo 11, Python 3, OpenCV
 
